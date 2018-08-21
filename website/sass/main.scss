@@ -1,6 +1,9 @@
+@import "resources";
 @import "fonts";
 @import "landing";
 @import "layout";
+@import "docs";
+@import "footer";
 
 body,
 html,
@@ -13,7 +16,7 @@ html,
 }
 
 .fixedHeaderContainer {
-  background-color: #223351;
+  background-color: $mainColor;
 }
 .fixedHeaderContainer header {
   height: 60px;

@@ -73,113 +73,16 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl("doc1.html", language)}>Example Link</Button>
-            <Button href={docUrl("doc2.html", language)}>Example Link 2</Button>
+            <Button href="https://github.com/fuse-box/fuse-box">Github</Button>
+            <Button href={docUrl("getting-started/installation", language)}>
+              Getting started
+            </Button>
           </PromoSection>
         </div>
       </SplashContainer>
     );
   }
 }
-
-const Block = props => (
-  <Container
-    padding={["bottom", "top"]}
-    id={props.id}
-    background={props.background}
-  >
-    <GridBlock align="center" contents={props.children} layout={props.layout} />
-  </Container>
-);
-
-const Features = props => (
-  <Block layout="fourColumn">
-    {[
-      {
-        content: "This is the content of my feature",
-        image: imgUrl("docusaurus.svg"),
-        imageAlign: "top",
-        title: "Feature One",
-      },
-      {
-        content: "The content of my second feature",
-        image: imgUrl("docusaurus.svg"),
-        imageAlign: "top",
-        title: "Feature Two",
-      },
-    ]}
-  </Block>
-);
-
-const LearnHow = props => (
-  <Block background="light">
-    {[
-      {
-        content: "Talk about learning how to use this",
-        image: imgUrl("docusaurus.svg"),
-        imageAlign: "right",
-        title: "Learn How",
-      },
-    ]}
-  </Block>
-);
-
-const TryOut = props => (
-  <Block id="try">
-    {[
-      {
-        content: "Talk about trying this out",
-        image: imgUrl("docusaurus.svg"),
-        imageAlign: "left",
-        title: "Try it Out",
-      },
-    ]}
-  </Block>
-);
-
-const Description = props => (
-  <Block background="dark">
-    {[
-      {
-        content: "This is another description of how this project is useful",
-        image: imgUrl("docusaurus.svg"),
-        imageAlign: "right",
-        title: "Description",
-      },
-    ]}
-  </Block>
-);
-
-const Showcase = props => {
-  if ((siteConfig.users || []).length === 0) {
-    return null;
-  }
-  const showcase = siteConfig.users
-    .filter(user => {
-      return user.pinned;
-    })
-    .map((user, i) => {
-      return (
-        <a href={user.infoLink} key={i}>
-          <img src={user.image} alt={user.caption} title={user.caption} />
-        </a>
-      );
-    });
-
-  return (
-    <div className="productShowcaseSection paddingBottom">
-      <h2>{"Who's Using This?"}</h2>
-      <p>This project is used by all these people</p>
-      <div className="logos">{showcase}</div>
-      <div className="more-users">
-        <a className="button" href={pageUrl("users.html", props.language)}>
-          More {siteConfig.title} Users
-        </a>
-      </div>
-    </div>
-  );
-};
 
 const Feature = props => (
   <div className="feature">
@@ -214,7 +117,8 @@ const performanceDescription = `
 const typescriptFistDescription = `
  * First class TypeScript support
  * No configuration required
- * Replaces Babel
+ * Can replace Babel (for js projects)
+ * Publish typescript packages to npm
 `;
 
 const TypesriptFirst = props => (
@@ -261,10 +165,9 @@ class Index extends React.Component {
           </div>
           <TypesriptFirst />
 
-          <LearnHow />
+          {/* <LearnHow />
           <TryOut />
-          <Description />
-          <Showcase language={language} />
+          <Description /> */}
         </div>
       </div>
     );

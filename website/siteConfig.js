@@ -9,13 +9,13 @@ const siteConfig = {
   },
   cleanUrl: true,
   copyright: "Copyright © " + new Date().getFullYear() + " FuseBox",
-  favicon: "img/favicon.png",
-  footerIcon: "img/docusaurus.svg",
+  favicon: "img/favicon.ico",
+  footerIcon: "img/logo.svg",
   headerIcon: "img/logo.svg",
   headerLinks: [
     {
       doc: "getting-started/installation",
-      label: "Docs",
+      label: "Documentation",
     },
   ],
   highlight: {
